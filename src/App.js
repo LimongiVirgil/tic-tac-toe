@@ -6,6 +6,7 @@ import Table from './components/molecules/table/table'
 import Restart from './components/atoms/restart/restart'
 
 function App() {
+
   return (
     <div className="App">
       <Title />

@@ -17,25 +17,21 @@ const Table = () => {
   const tableRef = useRef(null)
   
   useEffect(() => {
-    if (
-      (board[0][0] === 'o' && board[0][1] === 'o' && board[0][2] === 'o') ||
-      (board[0][0] === 'x' && board[0][1] === 'x' && board[0][2] === 'x') ||
-      (board[1][0] === 'o' && board[1][1] === 'o' && board[1][2] === 'o') ||
-      (board[1][0] === 'x' && board[1][1] === 'x' && board[1][2] === 'x') ||
-      (board[2][0] === 'o' && board[2][1] === 'o' && board[2][2] === 'o') ||
-      (board[2][0] === 'x' && board[2][1] === 'x' && board[2][2] === 'x') ||
-      (board[0][0] === 'o' && board[1][1] === 'o' && board[2][2] === 'o') ||
-      (board[0][0] === 'x' && board[1][1] === 'x' && board[2][2] === 'x') ||
-      (board[0][2] === 'o' && board[1][1] === 'o' && board[2][0] === 'o') ||
-      (board[0][2] === 'x' && board[1][1] === 'x' && board[2][0] === 'x') ||
-      (board[0][0] === 'o' && board[1][0] === 'o' && board[2][0] === 'o') ||
-      (board[0][0] === 'x' && board[1][0] === 'x' && board[2][0] === 'x') ||
-      (board[0][1] === 'o' && board[1][1] === 'o' && board[2][1] === 'o') ||
-      (board[0][1] === 'x' && board[1][1] === 'x' && board[2][1] === 'x') ||
-      (board[0][2] === 'o' && board[1][2] === 'o' && board[2][2] === 'o') ||
-      (board[0][2] === 'x' && board[1][2] === 'x' && board[2][2] === 'x')
-    ) {
-      tableRef.current.style.pointerEvents = 'none';
+
+    let pawn = ['o', 'x'];
+    for (let i = 0; i < pawn.length; i++) {
+      if (
+        (board[0][0] === pawn[i] && board[0][1] === pawn[i] && board[0][2] === pawn[i]) ||
+        (board[1][0] === pawn[i] && board[1][1] === pawn[i] && board[1][2] === pawn[i]) ||
+        (board[2][0] === pawn[i] && board[2][1] === pawn[i] && board[2][2] === pawn[i]) ||
+        (board[0][0] === pawn[i] && board[1][1] === pawn[i] && board[2][2] === pawn[i]) ||
+        (board[0][2] === pawn[i] && board[1][1] === pawn[i] && board[2][0] === pawn[i]) ||
+        (board[0][0] === pawn[i] && board[1][0] === pawn[i] && board[2][0] === pawn[i]) ||
+        (board[0][1] === pawn[i] && board[1][1] === pawn[i] && board[2][1] === pawn[i]) ||
+        (board[0][2] === pawn[i] && board[1][2] === pawn[i] && board[2][2] === pawn[i])
+      ) {
+        tableRef.current.style.pointerEvents = 'none';
+      }
     }
   }, [board])
 
