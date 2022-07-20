@@ -15,7 +15,7 @@ const Table = () => {
   )
 
   const tableRef = useRef(null)
-  
+
   useEffect(() => {
 
     let pawn = ['o', 'x'];
@@ -36,7 +36,7 @@ const Table = () => {
   }, [board])
 
   const handleClick = (currCell) => {
-    roundShape ? currCell.className = "round" : currCell.className = "cross";
+    //roundShape ? currCell.className = "round" : currCell.className = "cross";
 
     let cellIndex = currCell.cellIndex;
     let rowIndex = currCell.parentElement.rowIndex
@@ -52,19 +52,19 @@ const Table = () => {
     <table ref={tableRef}>
       <tbody>
         <tr>
-          <Cell handleClick={handleClick} />
-          <Cell handleClick={handleClick} />
-          <Cell handleClick={handleClick} />
+          <Cell cellPawn={board[0][0]} handleClick={handleClick} />
+          <Cell cellPawn={board[0][1]} handleClick={handleClick} />
+          <Cell cellPawn={board[0][2]} handleClick={handleClick} />
         </tr>
         <tr>
-          <Cell handleClick={handleClick} />
-          <Cell handleClick={handleClick} />
-          <Cell handleClick={handleClick} />
+          <Cell cellPawn={board[1][0]} handleClick={handleClick} />
+          <Cell cellPawn={board[1][1]} handleClick={handleClick} />
+          <Cell cellPawn={board[1][2]} handleClick={handleClick} />
         </tr>
         <tr>
-          <Cell handleClick={handleClick} />
-          <Cell handleClick={handleClick} />
-          <Cell handleClick={handleClick} />
+          <Cell cellPawn={board[2][0]} handleClick={handleClick} />
+          <Cell cellPawn={board[2][1]} handleClick={handleClick} />
+          <Cell cellPawn={board[2][2]} handleClick={handleClick} />
         </tr>
       </tbody>
     </table>

@@ -1,12 +1,16 @@
 import React, { useRef } from 'react'
 import './cell.scss'
 
-const Cell = ({handleClick}) => {
+const Cell = ({handleClick, cellPawn}) => {
 
   const cellRef = useRef(null)
 
   return (
-    <td ref={cellRef} onClick={() => handleClick(cellRef.current)}>
+    <td 
+      className={cellPawn === 'o' ? 'round' : cellPawn === 'x' ? 'cross' : ''} 
+      ref={cellRef} 
+      onClick={() => handleClick(cellRef.current)}
+    >
       <div className="crossIcon">
         <div></div>
         <div></div>
