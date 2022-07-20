@@ -50,27 +50,25 @@ const Table = () => {
 
     setRoundShape(!roundShape);
     setBoard(currBoard)
-
-    //endGame(board);
   }
 
   return (
     <table ref={tableRef}>
       <tbody>
         <tr>
-          <Cell handleClick={handleClick}/>
-          <Cell handleClick={handleClick}/>
-          <Cell handleClick={handleClick}/>
+          <Cell handleClick={handleClick} />
+          <Cell handleClick={handleClick} />
+          <Cell handleClick={handleClick} />
         </tr>
         <tr>
-          <Cell handleClick={handleClick}/>
-          <Cell handleClick={handleClick}/>
-          <Cell handleClick={handleClick}/>
+          <Cell handleClick={handleClick} />
+          <Cell handleClick={handleClick} />
+          <Cell handleClick={handleClick} />
         </tr>
         <tr>
-          <Cell handleClick={handleClick}/>
-          <Cell handleClick={handleClick}/>
-          <Cell handleClick={handleClick}/>
+          <Cell handleClick={handleClick} />
+          <Cell handleClick={handleClick} />
+          <Cell handleClick={handleClick} />
         </tr>
       </tbody>
     </table>
